@@ -1,0 +1,15 @@
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\Planechase.deps.json
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\Planechase.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\Planechase.pdb
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\BLL.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\DTO.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\BLL.pdb
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\Debug\DTO.pdb
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.csproj.AssemblyReference.cache
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.AssemblyInfoInputs.cache
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.AssemblyInfo.cs
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.csproj.CoreCompileInputs.cache
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.csproj.CopyComplete
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\Debug\Planechase.pdb

@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "DTO\\bin": true,
+    "DTO\\obj": true,
+    "BLL\\bin": true,
+    "BLL\\obj": true,
+    ".vscode": true
+  }
+}

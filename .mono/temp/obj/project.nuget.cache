@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "End3RruSnydoN40DIvOCY5nP0xdrFVgh3MGztJlS1hWVqkWm83wbSZFVrJxZ+963VchmYDIgOptRKo1l0Np83g==",
+  "dgSpecHash": "neIAmHCR9SGlprxfxUYedttVvudgEQ3UcObRarX7+xYSG3OyW2I8jjOZlCOirdKkob4ry4wEI6VPPjHQclrIKw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\edmundo\\Documents\\Rodrigo\\Projetos\\Planechase\\Planechase.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\edmundo\\Documents\\Rodrigo\\Projetos\\Planechase\\Planechase.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\edmundo\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\edmundo\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
