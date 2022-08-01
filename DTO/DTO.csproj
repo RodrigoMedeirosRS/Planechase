@@ -1,7 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
-
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="GodotSharp">
+            <HintPath>..\.mono\assemblies\Release\GodotSharp.dll</HintPath>
+        </Reference>
+    </ItemGroup>
 </Project>
