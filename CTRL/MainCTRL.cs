@@ -12,12 +12,21 @@ namespace CTRL
 		private DTO.Card ActualPlane { get; set; }
 		private DTO.Card ActualPhenomenon { get; set; }
 		private Control OptionMenu { get; set; }
+		private bool EnablePhenomenons { get; set; }
+		private bool EnableCustomCards { get; set; }
+		private int ChaosFacesCount { get; set; }
+		private int TransplanarFacesCount { get; set; }
+		private CheckButton Phenomenons { get; set; }
+		private CheckButton CustomCards { get; set; }
+		private SpinBox TransplanarFaces { get; set; }
+		private SpinBox ChaosFaces { get; set; }
 		public override void _Ready()
 		{
 			PopularNodes();
+			AlterarVisibilidadeMenu(false);
 			RealizarInjecaoDeDependencias();
 			DesativarFuncoesDeAltoProcessamento();
-			AlterarVisibilidadeMenu(false);
+			SetarValoresIniciais();
 		}
 		private void PopularNodes()
 		{
@@ -30,10 +39,18 @@ namespace CTRL
 			FirstCard = true;
 			ActualPlane = null;
 			ActualPhenomenon = null;
+			EnableCustomCards = BLL.Options.EnableCustomCards;
+			EnablePhenomenons = BLL.Options.EnablePhenomenons;
+			ChaosFacesCount = BLL.Options.ChaosFaces;
+			TransplanarFacesCount = BLL.Options.TransplaneFaces;
 			PlanarDeck = new BLL.Deck(Card.TextureNormal);
 			PlanarDeck.LoadDeck();
 			PlanarDeck.ShuffleDeck();
 			Phenomenon.Visible = false;
+		}
+		private void SetarValoresIniciais()
+		{
+
 		}
 		private void DesativarFuncoesDeAltoProcessamento()
 		{
@@ -101,6 +118,42 @@ namespace CTRL
 		{
 			if (ActualPhenomenon != null)
 				Card.TextureNormal = ActualPhenomenon.CardImage;
+		}
+		private void _on_AtivaFenomenos_toggled(bool button_pressed)
+		{
+			EnablePhenomenons = button_pressed;
+		}
+		private void _on_AtivarCustomCards_toggled(bool button_pressed)
+		{
+			EnableCustomCards = button_pressed;
+		}
+		private void _on_ChanceDeTransplanar_value_changed(float value)
+		{
+			TransplanarFacesCount = Convert.ToInt32(value);
+		}
+		private void _on_ChanceDeTransplanar2_value_changed(float value)
+		{
+			ChaosFacesCount = Convert.ToInt32(value);
+		}
+		private void _on_Salvar_button_up()
+		{
+			BLL.Options.ChaosFaces = ChaosFacesCount;
+			BLL.Options.TransplaneFaces = TransplanarFacesCount;
+			BLL.Options.EnableCustomCards = EnableCustomCards;
+			BLL.Options.EnablePhenomenons = EnablePhenomenons;
+			Card.TextureNormal = PlanarDeck.Verso;
+			FirstCard = true;
+			PlanarDeck.ShuffleDeckAllDeck();
+			AlterarVisibilidadeMenu(false);
+		}
+		private void _on_Cancelar_button_up()
+		{
+			ChaosFacesCount = BLL.Options.ChaosFaces;
+			TransplanarFacesCount = BLL.Options.TransplaneFaces;
+			EnableCustomCards = BLL.Options.EnableCustomCards;
+			EnablePhenomenons = BLL.Options.EnablePhenomenons;
+			SetarValoresIniciais();
+			AlterarVisibilidadeMenu(false);
 		}
 	}
 }

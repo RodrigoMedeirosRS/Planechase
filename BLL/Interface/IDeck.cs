@@ -9,6 +9,7 @@ namespace BLL.Interface
         void ShuffleDeck();
         Texture Verso { get; }
         DTO.Card RevealTopCard();
+        void ShuffleDeckAllDeck();
         void SendToCemitery(DTO.Card card);
         void SendToBotton(DTO.Card card);
     }

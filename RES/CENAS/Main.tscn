@@ -206,10 +206,11 @@ expand = true
 
 [node name="AtivaFenomenos" type="CheckButton" parent="MenuDeOpcoes/Menu"]
 margin_left = 387.0
-margin_top = 224.0
+margin_top = 207.0
 margin_right = 421.0
-margin_bottom = 254.0
+margin_bottom = 237.0
 theme = ExtResource( 19 )
+pressed = true
 align = 1
 expand_icon = true
 
@@ -222,11 +223,30 @@ theme = ExtResource( 19 )
 custom_fonts/font = SubResource( 3 )
 text = "Ativar Fenômenos"
 
+[node name="AtivarCustomCards" type="CheckButton" parent="MenuDeOpcoes/Menu"]
+margin_left = 387.0
+margin_top = 243.0
+margin_right = 421.0
+margin_bottom = 273.0
+theme = ExtResource( 19 )
+pressed = true
+align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="MenuDeOpcoes/Menu/AtivarCustomCards"]
+margin_left = -233.0
+margin_top = -1.0
+margin_right = -64.0
+margin_bottom = 27.0
+theme = ExtResource( 19 )
+custom_fonts/font = SubResource( 3 )
+text = "Ativar Custom Cards"
+
 [node name="ChanceDeTransplanar" type="SpinBox" parent="MenuDeOpcoes/Menu"]
 margin_left = 376.0
-margin_top = 263.0
+margin_top = 279.0
 margin_right = 450.0
-margin_bottom = 296.0
+margin_bottom = 312.0
 theme = ExtResource( 19 )
 max_value = 3.0
 value = 1.0
@@ -242,9 +262,9 @@ text = "Chance de Transplanar"
 
 [node name="ChanceDeTransplanar2" type="SpinBox" parent="MenuDeOpcoes/Menu"]
 margin_left = 376.0
-margin_top = 305.0
+margin_top = 321.0
 margin_right = 450.0
-margin_bottom = 338.0
+margin_bottom = 354.0
 theme = ExtResource( 19 )
 max_value = 3.0
 value = 1.0
@@ -260,9 +280,9 @@ text = "Chance de Caos"
 
 [node name="Salvar" type="TextureButton" parent="MenuDeOpcoes/Menu"]
 margin_left = 308.0
-margin_top = 355.0
+margin_top = 371.0
 margin_right = 435.0
-margin_bottom = 396.0
+margin_bottom = 412.0
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 23 )
 texture_hover = ExtResource( 25 )
@@ -282,9 +302,9 @@ valign = 1
 
 [node name="Cancelar" type="TextureButton" parent="MenuDeOpcoes/Menu"]
 margin_left = 154.0
-margin_top = 355.0
+margin_top = 371.0
 margin_right = 281.0
-margin_bottom = 396.0
+margin_bottom = 412.0
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 23 )
 texture_hover = ExtResource( 25 )
@@ -358,3 +378,9 @@ Sempre que um efeito desencadeado por um Plano ou Fenômeno referenciar você, e
 [connection signal="button_up" from="ConteinerHorizontal/Comandos/Ajustes" to="." method="_on_Ajustes_button_up"]
 [connection signal="button_up" from="ConteinerHorizontal/Comandos/Embaralhar" to="." method="_on_Embaralhar_button_up"]
 [connection signal="button_up" from="ConteinerHorizontal/Comandos/Fenomeno" to="." method="_on_Fenomeno_button_up"]
+[connection signal="toggled" from="MenuDeOpcoes/Menu/AtivaFenomenos" to="." method="_on_AtivaFenomenos_toggled"]
+[connection signal="toggled" from="MenuDeOpcoes/Menu/AtivarCustomCards" to="." method="_on_AtivarCustomCards_toggled"]
+[connection signal="value_changed" from="MenuDeOpcoes/Menu/ChanceDeTransplanar" to="." method="_on_ChanceDeTransplanar_value_changed"]
+[connection signal="value_changed" from="MenuDeOpcoes/Menu/ChanceDeTransplanar2" to="." method="_on_ChanceDeTransplanar2_value_changed"]
+[connection signal="button_up" from="MenuDeOpcoes/Menu/Salvar" to="." method="_on_Salvar_button_up"]
+[connection signal="button_up" from="MenuDeOpcoes/Menu/Cancelar" to="." method="_on_Cancelar_button_up"]

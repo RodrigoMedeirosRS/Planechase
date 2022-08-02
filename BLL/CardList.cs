@@ -13,6 +13,10 @@ namespace BLL
             "res://RES/SPRITES/Phenomenon_6",
             "res://RES/SPRITES/Phenomenon_8"
         };
+        internal static List<string> CustomPhenomenon { get; } = new List<string>()
+        {
+            "res://RES/SPRITES/Phenomenon_9"
+        };
         internal static List<string> Plane { get; } = new List<string>()
         {
             "res://RES/SPRITES/Plane_01",
@@ -93,6 +97,37 @@ namespace BLL
             "res://RES/SPRITES/Plane_76",
             "res://RES/SPRITES/Plane_77",
             "res://RES/SPRITES/Plane_78",
+        };
+        internal static List<string> CustomPlane { get; } = new List<string>()
+        {
+            "res://RES/SPRITES/Plane_79",
+            "res://RES/SPRITES/Plane_80",
+            "res://RES/SPRITES/Plane_81",
+            "res://RES/SPRITES/Plane_82",
+            "res://RES/SPRITES/Plane_83",
+            "res://RES/SPRITES/Plane_84",
+            "res://RES/SPRITES/Plane_85",
+            "res://RES/SPRITES/Plane_86",
+            "res://RES/SPRITES/Plane_87",
+            "res://RES/SPRITES/Plane_88",
+            "res://RES/SPRITES/Plane_89",
+            "res://RES/SPRITES/Plane_90",
+            "res://RES/SPRITES/Plane_91",
+            "res://RES/SPRITES/Plane_92",
+            "res://RES/SPRITES/Plane_93",
+            "res://RES/SPRITES/Plane_94",
+            "res://RES/SPRITES/Plane_95",
+            "res://RES/SPRITES/Plane_96",
+            "res://RES/SPRITES/Plane_97",
+            "res://RES/SPRITES/Plane_98",
+            "res://RES/SPRITES/Plane_99",
+            "res://RES/SPRITES/Plane_100",
+            "res://RES/SPRITES/Plane_101",
+            "res://RES/SPRITES/Plane_102",
+            "res://RES/SPRITES/Plane_103",
+            "res://RES/SPRITES/Plane_104",
+            "res://RES/SPRITES/Plane_105",
+            "res://RES/SPRITES/Plane_106"
         };
     }
 }
