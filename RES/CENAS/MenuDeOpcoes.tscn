@@ -1,0 +1,210 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://RES/THEMES/MinimalUI.tres" type="Theme" id=1]
+[ext_resource path="res://RES/SPRITES/Gui/MapBack.png" type="Texture" id=2]
+[ext_resource path="res://RES/SPRITES/Gui/MenuWindow.png" type="Texture" id=3]
+[ext_resource path="res://RES/SPRITES/Gui/MenuButtonInactiv.png" type="Texture" id=4]
+[ext_resource path="res://RES/SPRITES/Gui/MenuButtonPressed.png" type="Texture" id=5]
+[ext_resource path="res://RES/SPRITES/Gui/MenuButtonPreLight.png" type="Texture" id=6]
+[ext_resource path="res://RES/SPRITES/Gui/MenuButtonGray.png" type="Texture" id=7]
+[ext_resource path="res://RES/FONTES/Augusta.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://CTRL/MenuDeOpcoesCTRL.cs" type="Script" id=9]
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+use_filter = true
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 8 )
+
+[node name="MenuDeOpcoes" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 9 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.886275 )
+
+[node name="Menu" type="TextureRect" parent="."]
+margin_left = 387.0
+margin_top = -1.0
+margin_right = 979.0
+margin_bottom = 596.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="AtivaFenomenos" type="CheckButton" parent="Menu"]
+margin_left = 387.0
+margin_top = 224.0
+margin_right = 421.0
+margin_bottom = 254.0
+theme = ExtResource( 1 )
+align = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="Menu/AtivaFenomenos"]
+margin_left = -233.0
+margin_top = -1.0
+margin_right = -64.0
+margin_bottom = 27.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Ativar Fenômenos"
+
+[node name="ChanceDeTransplanar" type="SpinBox" parent="Menu"]
+margin_left = 376.0
+margin_top = 263.0
+margin_right = 450.0
+margin_bottom = 296.0
+theme = ExtResource( 1 )
+max_value = 3.0
+value = 1.0
+
+[node name="Label" type="Label" parent="Menu/ChanceDeTransplanar"]
+margin_left = -223.0
+margin_top = 2.0
+margin_right = -4.0
+margin_bottom = 30.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Chance de Transplanar"
+
+[node name="ChanceDeTransplanar2" type="SpinBox" parent="Menu"]
+margin_left = 376.0
+margin_top = 305.0
+margin_right = 450.0
+margin_bottom = 338.0
+theme = ExtResource( 1 )
+max_value = 3.0
+value = 1.0
+
+[node name="Label" type="Label" parent="Menu/ChanceDeTransplanar2"]
+margin_left = -224.0
+margin_top = 3.0
+margin_right = -41.0
+margin_bottom = 31.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Chance de Caos"
+
+[node name="Salvar" type="TextureButton" parent="Menu"]
+margin_left = 308.0
+margin_top = 355.0
+margin_right = 435.0
+margin_bottom = 396.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+texture_disabled = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="Menu/Salvar"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 122.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Aplicar"
+align = 1
+valign = 1
+
+[node name="Cancelar" type="TextureButton" parent="Menu"]
+margin_left = 154.0
+margin_top = 355.0
+margin_right = 281.0
+margin_bottom = 396.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 6 )
+texture_disabled = ExtResource( 7 )
+expand = true
+
+[node name="Label" type="Label" parent="Menu/Cancelar"]
+margin_left = 5.0
+margin_top = 6.0
+margin_right = 123.0
+margin_bottom = 34.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Cancelar"
+align = 1
+valign = 1
+
+[node name="Regras" type="TextureRect" parent="."]
+margin_left = 24.0
+margin_top = -48.0
+margin_right = 369.0
+margin_bottom = 548.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Regras"]
+margin_left = 18.0
+margin_top = 90.0
+margin_right = 329.0
+margin_bottom = 572.0
+theme = ExtResource( 1 )
+custom_fonts/bold_font = SubResource( 6 )
+bbcode_enabled = true
+bbcode_text = "[wave amp=20 freq=2][b]Planechase[/b][/wave] 
+O planechase é um formato que convida o jogador a travar uma batalha através de todo multiverso, onde a cada momento os adversários visitam novos planos que modificam o duelo ou confronto.
+
+[wave amp=20 freq=2][b]Regras[/b][/wave]
+Na primeira rodada, o jogador que inicia o jogo revela o primeiro card do deck planar (clicando sobre o card), este será o plano onde o confronto começará.
+
+A qualquer momento em que pudesse lançar um feitiço, um jogador pode rolar 1 dado planar (d6), caso role um valor atribuído ao símbolo dos planeswalkers isso significa que os jogadores Transplanaram, indo para outro lugar do multiverso (clique sobre o símbolo dos planeswalkers). No entanto, caso um jogador role um valor atribuído ao caos (segundo símbolo), é ativado o efeito de caos do plano (linha com o símbolo do caos). A primeira rolagem do dado plano não tem custo Mana, sendo que cada rolagem seguinte tem um custo cumulativo de 1 Mana incolor.
+
+Efeitos que anulam mágicas não podem anular o dado planar ou os efeitos do plano, efeitos que anulem habilidades podem anular os efeitos do caos, mas não os efeitos passivos. A ação de Transplanar não pode ser anulada.
+
+[wave amp=20 freq=2][b]Fenômenos[/b][/wave]
+Enquanto viajam através das eternidades cegas, efeitos caóticos e adversos podem ocorrer, desafiando ainda mais os jogadores em uma batalha Planar. Ao Transplanar os jogadores podem encontrar uma carta de Fenômeno, quando isso ocorre, o fenômeno deve ser resolvido imediatamente, em seguida clicando sobre o Fenômeno, os jogadores poderão ver para qual plano foram.
+
+Alguns Fenômenos podem ter seus efeitos persistidos até os jogadores Transplanarem novamente, desta forma para visualizar novamente o card de Fenômeno basta clicar no ícone de tempestade que surgirá no canto inferior direito.
+
+[wave amp=20 freq=2][b]Jogador Ativo[/b][/wave]
+Sempre que um efeito desencadeado por um Plano ou Fenômeno referenciar você, ele está fazendo referência ao jogador ativo, que é o jogador que está no seu turno naquele momento."
+text = "Planechase 
+O planechase é um formato que convida o jogador a travar uma batalha através de todo multiverso, onde a cada momento os adversários visitam novos planos que modificam o duelo ou confronto.
+
+Regras
+Na primeira rodada, o jogador que inicia o jogo revela o primeiro card do deck planar (clicando sobre o card), este será o plano onde o confronto começará.
+
+A qualquer momento em que pudesse lançar um feitiço, um jogador pode rolar 1 dado planar (d6), caso role um valor atribuído ao símbolo dos planeswalkers isso significa que os jogadores Transplanaram, indo para outro lugar do multiverso (clique sobre o símbolo dos planeswalkers). No entanto, caso um jogador role um valor atribuído ao caos (segundo símbolo), é ativado o efeito de caos do plano (linha com o símbolo do caos). A primeira rolagem do dado plano não tem custo Mana, sendo que cada rolagem seguinte tem um custo cumulativo de 1 Mana incolor.
+
+Efeitos que anulam mágicas não podem anular o dado planar ou os efeitos do plano, efeitos que anulem habilidades podem anular os efeitos do caos, mas não os efeitos passivos. A ação de Transplanar não pode ser anulada.
+
+Fenômenos
+Enquanto viajam através das eternidades cegas, efeitos caóticos e adversos podem ocorrer, desafiando ainda mais os jogadores em uma batalha Planar. Ao Transplanar os jogadores podem encontrar uma carta de Fenômeno, quando isso ocorre, o fenômeno deve ser resolvido imediatamente, em seguida clicando sobre o Fenômeno, os jogadores poderão ver para qual plano foram.
+
+Alguns Fenômenos podem ter seus efeitos persistidos até os jogadores Transplanarem novamente, desta forma para visualizar novamente o card de Fenômeno basta clicar no ícone de tempestade que surgirá no canto inferior direito.
+
+Jogador Ativo
+Sempre que um efeito desencadeado por um Plano ou Fenômeno referenciar você, ele está fazendo referência ao jogador ativo, que é o jogador que está no seu turno naquele momento."
