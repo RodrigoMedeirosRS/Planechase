@@ -10,5 +10,6 @@ namespace BLL.Interface
         Texture Verso { get; }
         DTO.Card RevealTopCard();
         void SendToCemitery(DTO.Card card);
+        void SendToBotton(DTO.Card card);
     }
 }

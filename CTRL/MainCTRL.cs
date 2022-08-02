@@ -8,8 +8,7 @@ public class MainCTRL : Control
 	private TextureButton Phenomenon { get; set; }
 	private BLL.Interface.IDeck PlanarDeck { get; set; }
 	private DTO.Card ActualPlane { get; set; }
-
-
+	private DTO.Card ActualPhenomenon { get; set; }
 	public override void _Ready()
 	{
 		PopularNodes();
@@ -24,10 +23,12 @@ public class MainCTRL : Control
 	private void RealizarInjecaoDeDependencias()
 	{
 		FirstCard = true;
-		Phenomenon.Visible = false;
+		ActualPlane = null;
+		ActualPhenomenon = null;
 		PlanarDeck = new BLL.Deck(Card.TextureNormal);
 		PlanarDeck.LoadDeck();
 		PlanarDeck.ShuffleDeck();
+		Phenomenon.Visible = false;
 	}
 	private void DesativarFuncoesDeAltoProcessamento()
 	{
@@ -36,8 +37,26 @@ public class MainCTRL : Control
 	}
 	private void RevealCard()
 	{
-		ActualPlane = PlanarDeck.RevealTopCard();
-		Card.TextureNormal = ActualPlane.CardImage;
+		var card = PlanarDeck.RevealTopCard();
+		if (card.CardType == DTO.Type.Plane)
+		{
+			ActualPlane = card;
+			ActualPhenomenon = null;
+			Card.TextureNormal = ActualPlane.CardImage;
+			Phenomenon.Visible = false;
+		}
+		else
+		{
+			ActualPhenomenon = card;
+			Card.TextureNormal = ActualPhenomenon.CardImage;
+			while(card.CardType != DTO.Type.Plane)
+			{
+				PlanarDeck.SendToCemitery(card);
+				card = PlanarDeck.RevealTopCard();
+			}
+			ActualPlane = card;
+			Phenomenon.Visible = true;
+		}
 	}
 	private void _on_Card_button_up()
 	{
@@ -45,6 +64,10 @@ public class MainCTRL : Control
 		{
 			RevealCard();
 			FirstCard = false;
+		}
+		if (Phenomenon.Visible)
+		{
+			Card.TextureNormal = ActualPlane.CardImage;
 		}
 	}
 	private void _on_Transplanar_button_up()
@@ -67,6 +90,7 @@ public class MainCTRL : Control
 	}
 	private void _on_Fenomeno_button_up()
 	{
-		// Replace with function body.
+		if (ActualPhenomenon != null)
+			Card.TextureNormal = ActualPhenomenon.CardImage;
 	}
 }

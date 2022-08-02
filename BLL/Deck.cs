@@ -26,7 +26,7 @@ namespace BLL
             Cemitery.Clear();
             PlanarDeck = LoadCards(CardList.Plane, DTO.Type.Plane);
             if (Options.EnablePhenomenons)
-                PlanarDeck.AddRange(LoadCards(CardList.Phenomenon, DTO.Type.Plane));
+                PlanarDeck.AddRange(LoadCards(CardList.Phenomenon, DTO.Type.Phenomenon));
         }
         private List<DTO.Card> LoadCards(List<string> cards, DTO.Type cardType)
         {
@@ -46,22 +46,24 @@ namespace BLL
         }
         public DTO.Card RevealTopCard()
         {
-            try
-            {
-                GD.Print(PlanarDeck.Count);
-                return PlanarDeck.FirstOrDefault();
-            }
-            catch
+            var card = PlanarDeck.FirstOrDefault();
+            if (card == null)
             {
                 LoadDeck();
                 ShuffleDeck();
-                return PlanarDeck.FirstOrDefault();
+                card = PlanarDeck.FirstOrDefault();
             }
+            return card;
         }
         public void SendToCemitery(DTO.Card card)
         {
             PlanarDeck.Remove(card);
             Cemitery.Add(card);
+        }
+        public void SendToBotton(DTO.Card card)
+        {
+            PlanarDeck.Remove(card);
+            PlanarDeck.Add(card);
         }
         public void ShuffleDeck()
         {
