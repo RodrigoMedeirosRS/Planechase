@@ -20,6 +20,12 @@ namespace CTRL
 		private CheckButton CustomCards { get; set; }
 		private SpinBox TransplanarFaces { get; set; }
 		private SpinBox ChaosFaces { get; set; }
+		private TextureRect TransplaneRoll1 { get; set; }
+		private TextureRect TransplaneRoll2 { get; set; }
+		private TextureRect TransplaneRoll3 { get; set; }
+		private TextureRect ChaosRoll1 { get; set; }
+		private TextureRect ChaosRoll2 { get; set; }
+		private TextureRect ChaosRoll3 { get; set; }
 		public override void _Ready()
 		{
 			PopularNodes();
@@ -33,6 +39,16 @@ namespace CTRL
 			Card = GetNode<TextureButton>("./Card");
 			Phenomenon = GetNode<TextureButton>("./ConteinerHorizontal/Comandos/Fenomeno");
 			OptionMenu = GetNode<Control>("./MenuDeOpcoes");
+			TransplanarFaces = GetNode<SpinBox>("./MenuDeOpcoes/Menu/ChanceDeTransplanar");
+			ChaosFaces = GetNode<SpinBox>("./MenuDeOpcoes/Menu/ChanceDeTransplanar2");
+			Phenomenons = GetNode<CheckButton>("./MenuDeOpcoes/Menu/AtivaFenomenos");
+			CustomCards = GetNode<CheckButton>("./MenuDeOpcoes/Menu/AtivarCustomCards");
+			TransplaneRoll1 = GetNode<TextureRect>("./ConteinerHorizontal/Transplanar/Rolagens/Rolagem1");
+			TransplaneRoll2 = GetNode<TextureRect>("./ConteinerHorizontal/Transplanar/Rolagens/Rolagem2");
+			TransplaneRoll3 = GetNode<TextureRect>("./ConteinerHorizontal/Transplanar/Rolagens/Rolagem3");
+			ChaosRoll1 = GetNode<TextureRect>("./ConteinerHorizontal/Caos/Rolagens2/Rolagem1");
+			ChaosRoll2 = GetNode<TextureRect>("./ConteinerHorizontal/Caos/Rolagens2/Rolagem2");
+			ChaosRoll3 = GetNode<TextureRect>("./ConteinerHorizontal/Caos/Rolagens2/Rolagem3");
 		}
 		private void RealizarInjecaoDeDependencias()
 		{
@@ -47,10 +63,23 @@ namespace CTRL
 			PlanarDeck.LoadDeck();
 			PlanarDeck.ShuffleDeck();
 			Phenomenon.Visible = false;
+			AlterarVisibilidadeRolagens();
+		}
+		private void AlterarVisibilidadeRolagens()
+		{
+			TransplaneRoll1.Visible = BLL.Options.TransplaneFaces >= 1;
+			TransplaneRoll2.Visible = BLL.Options.TransplaneFaces >= 2;
+			TransplaneRoll3.Visible = BLL.Options.TransplaneFaces >= 3;
+			ChaosRoll1.Visible = BLL.Options.ChaosFaces >= 1;
+			ChaosRoll2.Visible = BLL.Options.ChaosFaces >= 2;
+			ChaosRoll3.Visible = BLL.Options.ChaosFaces >= 3;
 		}
 		private void SetarValoresIniciais()
 		{
-
+			ChaosFaces.Set("value", BLL.Options.ChaosFaces);
+			Phenomenons.Set("pressed", BLL.Options.EnablePhenomenons);
+			CustomCards.Set("pressed", BLL.Options.EnableCustomCards);
+			TransplanarFaces.Set("value", BLL.Options.TransplaneFaces);
 		}
 		private void DesativarFuncoesDeAltoProcessamento()
 		{
@@ -145,6 +174,7 @@ namespace CTRL
 			FirstCard = true;
 			PlanarDeck.ShuffleDeckAllDeck();
 			AlterarVisibilidadeMenu(false);
+			AlterarVisibilidadeRolagens();
 		}
 		private void _on_Cancelar_button_up()
 		{
@@ -154,6 +184,7 @@ namespace CTRL
 			EnablePhenomenons = BLL.Options.EnablePhenomenons;
 			SetarValoresIniciais();
 			AlterarVisibilidadeMenu(false);
+			AlterarVisibilidadeRolagens();
 		}
 	}
 }
