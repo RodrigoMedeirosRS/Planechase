@@ -27,12 +27,12 @@ namespace BLL
             Cemitery.Clear();
             PlanarDeck = LoadCards(CardList.Plane, DTO.Type.Plane);
             if (Options.EnableCustomCards)
-                PlanarDeck = LoadCards(CardList.CustomPlane, DTO.Type.Plane);
+                PlanarDeck.AddRange(LoadCards(CardList.CustomPlane, DTO.Type.Plane));
             if (Options.EnablePhenomenons)
             {
                 PlanarDeck.AddRange(LoadCards(CardList.Phenomenon, DTO.Type.Phenomenon));
                 if (Options.EnableCustomCards)
-                    PlanarDeck = LoadCards(CardList.CustomPhenomenon, DTO.Type.Phenomenon);
+                    PlanarDeck.AddRange(LoadCards(CardList.CustomPhenomenon, DTO.Type.Phenomenon));
             }
         }
         private List<DTO.Card> LoadCards(List<string> cards, DTO.Type cardType)
