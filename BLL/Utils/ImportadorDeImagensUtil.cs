@@ -3,10 +3,10 @@ using Godot;
 
 namespace BLL.Utils
 {
-    public static class ImportadorDeImagensUtil
+    internal static class ImportadorDeImagensUtil
     {
-        public static long Counter { get; set; } = 0;
-        public static Texture BuscarImagem(string nomeImagem, string caminho)
+        internal static long Counter { get; set; } = 0;
+        internal static Texture BuscarImagem(string nomeImagem, string caminho)
         {
             var imagem = new Image();
             var texturaDaImagem = new ImageTexture();

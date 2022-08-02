@@ -4,20 +4,23 @@ using System.Linq;
 using System.Collections.Generic;
 
 using BLL.Utils;
+using BLL.Interface;
 
 namespace BLL
 {
-    public class Deck
+    public class Deck : IDeck
     {
-        public List<DTO.Card> PlanarDeck { get; set; }
-        public List<DTO.Card> Cemitery { get; set; }
+        private List<DTO.Card> PlanarDeck { get; set; }
+        private List<DTO.Card> Cemitery { get; set; }
+        public Texture Verso { get; private set; }
 
-        public Deck()
+        public Deck(Texture verso)
         {
+            Verso = verso;
             PlanarDeck = new List<DTO.Card>();
             Cemitery = new List<DTO.Card>();
         }
-        private void LoadDeck()
+        public void LoadDeck()
         {
             PlanarDeck.Clear();
             Cemitery.Clear();
@@ -45,6 +48,7 @@ namespace BLL
         {
             try
             {
+                GD.Print(PlanarDeck.Count);
                 return PlanarDeck.FirstOrDefault();
             }
             catch
