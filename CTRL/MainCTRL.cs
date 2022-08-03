@@ -28,11 +28,21 @@ namespace CTRL
 		private TextureRect ChaosRoll3 { get; set; }
 		public override void _Ready()
 		{
+			CentralizarJanela();
 			PopularNodes();
 			AlterarVisibilidadeMenu(false);
 			RealizarInjecaoDeDependencias();
 			DesativarFuncoesDeAltoProcessamento();
 			SetarValoresIniciais();
+		}
+		private void CentralizarJanela()
+		{
+			if (Godot.OS.GetName() == "Windows" || Godot.OS.GetName() == "X11")
+			{
+				var tamanhoDaJanela = Godot.OS.GetScreenSize(0);
+				var tamanhoDaTela = Godot.OS.WindowSize;
+				Godot.OS.WindowPosition = (tamanhoDaJanela * 0.5f - tamanhoDaTela * 0.5f);
+			}
 		}
 		private void PopularNodes()
 		{

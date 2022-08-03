@@ -1,0 +1,15 @@
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\Planechase.deps.json
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\Planechase.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\Planechase.pdb
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\BLL.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\DTO.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\BLL.pdb
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\bin\ExportDebug\DTO.pdb
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.csproj.AssemblyReference.cache
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.AssemblyInfoInputs.cache
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.AssemblyInfo.cs
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.csproj.CoreCompileInputs.cache
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.csproj.CopyComplete
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.dll
+C:\Users\edmundo\Documents\Rodrigo\Projetos\Planechase\.mono\temp\obj\ExportDebug\Planechase.pdb
