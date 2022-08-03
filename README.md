@@ -20,4 +20,4 @@ Sempre que um efeito desencadeado por um Plano ou Fenômeno referenciar você, e
 
 ## Observações ##
 Este software NÃO é um produto oficial e NÃO tem qualquer afiliação ou vínculo com a Wizzards of The Coast.
-Este é um produto totalmente gratuito e opensource e tem como objetivo apenas divulgar o formato Planechase que foi descontinuado em 2012.
+Este é um produto totalmente gratuito, opensource e sem qualquer fim lucrativo, tem como objetivo apenas divulgar o formato Planechase que foi descontinuado em 2012.
