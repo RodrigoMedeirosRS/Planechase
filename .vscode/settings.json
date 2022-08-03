@@ -4,6 +4,9 @@
     "DTO\\obj": true,
     "BLL\\bin": true,
     "BLL\\obj": true,
-    ".vscode": true
+    ".vscode": true,
+    ".mono\\temp": true,
+    ".mono\\metadata": true,
+    ".import": true
   }
 }

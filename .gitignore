@@ -2,3 +2,6 @@
 /BLL/obj
 /DTO/bin
 /DTO/obj
+/.mono/temp
+/.mono/metadata
+/.import
