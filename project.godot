@@ -15,6 +15,7 @@ run/main_scene="res://RES/CENAS/Main.tscn"
 boot_splash/image="res://RES/SPRITES/Icon/Logo.png"
 boot_splash/bg_color=Color( 0.0901961, 0.0784314, 0.0588235, 1 )
 config/icon="res://icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 
