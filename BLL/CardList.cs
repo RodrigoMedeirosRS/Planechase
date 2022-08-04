@@ -2,9 +2,9 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    internal static class CardList
+    public static class CardList
     {
-        internal static List<string> Phenomenon { get; } = new List<string>()
+        public static List<string> Phenomenon { get; } = new List<string>()
         {
             "res://RES/CARDS/Phenomenon_1",
             "res://RES/CARDS/Phenomenon_3",
@@ -13,7 +13,7 @@ namespace BLL
             "res://RES/CARDS/Phenomenon_6",
             "res://RES/CARDS/Phenomenon_8"
         };
-        internal static List<string> CustomPhenomenon { get; } = new List<string>()
+        public static List<string> CustomPhenomenon { get; } = new List<string>()
         {
             "res://RES/CARDS/Phenomenon_9",
             "res://RES/CARDS/Phenomenon_10",
@@ -27,7 +27,7 @@ namespace BLL
             "res://RES/CARDS/Phenomenon_18",
             "res://RES/CARDS/Phenomenon_19"
         };
-        internal static List<string> Plane { get; } = new List<string>()
+        public static List<string> Plane { get; } = new List<string>()
         {
             "res://RES/CARDS/Plane_01",
             "res://RES/CARDS/Plane_02",
@@ -108,7 +108,7 @@ namespace BLL
             "res://RES/CARDS/Plane_77",
             "res://RES/CARDS/Plane_78",
         };
-        internal static List<string> CustomPlane { get; } = new List<string>()
+        public static List<string> CustomPlane { get; } = new List<string>()
         {
             "res://RES/CARDS/Plane_79",
             "res://RES/CARDS/Plane_80",

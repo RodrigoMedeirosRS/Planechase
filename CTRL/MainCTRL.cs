@@ -26,6 +26,7 @@ namespace CTRL
 		private TextureRect ChaosRoll1 { get; set; }
 		private TextureRect ChaosRoll2 { get; set; }
 		private TextureRect ChaosRoll3 { get; set; }
+		private Label DeckCount { get; set; }
 		public override void _Ready()
 		{
 			CentralizarJanela();
@@ -46,6 +47,7 @@ namespace CTRL
 		}
 		private void PopularNodes()
 		{
+			DeckCount = GetNode<Label>("./MenuDeOpcoes/Menu/TotalDeCards");
 			Card = GetNode<TextureButton>("./Card");
 			Phenomenon = GetNode<TextureButton>("./ConteinerHorizontal/Comandos/Fenomeno");
 			OptionMenu = GetNode<Control>("./MenuDeOpcoes");
@@ -90,6 +92,20 @@ namespace CTRL
 			Phenomenons.Set("pressed", BLL.Options.EnablePhenomenons);
 			CustomCards.Set("pressed", BLL.Options.EnableCustomCards);
 			TransplanarFaces.Set("value", BLL.Options.TransplaneFaces);
+			AutalizarContagemDeCartas();
+		}
+		private void AutalizarContagemDeCartas()
+		{
+			var totalDeCards = BLL.CardList.Plane.Count;
+			if (Phenomenons.Pressed)
+				totalDeCards += BLL.CardList.Phenomenon.Count;
+			if (CustomCards.Pressed)
+			{
+				totalDeCards += BLL.CardList.CustomPlane.Count;
+				if (Phenomenons.Pressed)
+					totalDeCards += BLL.CardList.CustomPhenomenon.Count;
+			}
+			DeckCount.Text = "Total de Cards no Deck: " + totalDeCards;
 		}
 		private void DesativarFuncoesDeAltoProcessamento()
 		{
@@ -161,10 +177,12 @@ namespace CTRL
 		private void _on_AtivaFenomenos_toggled(bool button_pressed)
 		{
 			EnablePhenomenons = button_pressed;
+			AutalizarContagemDeCartas();
 		}
 		private void _on_AtivarCustomCards_toggled(bool button_pressed)
 		{
 			EnableCustomCards = button_pressed;
+			AutalizarContagemDeCartas();
 		}
 		private void _on_ChanceDeTransplanar_value_changed(float value)
 		{
@@ -185,6 +203,7 @@ namespace CTRL
 			PlanarDeck.ShuffleDeckAllDeck();
 			AlterarVisibilidadeMenu(false);
 			AlterarVisibilidadeRolagens();
+			AutalizarContagemDeCartas();
 		}
 		private void _on_Cancelar_button_up()
 		{
@@ -195,6 +214,7 @@ namespace CTRL
 			SetarValoresIniciais();
 			AlterarVisibilidadeMenu(false);
 			AlterarVisibilidadeRolagens();
+			AutalizarContagemDeCartas();
 		}
 	}
 }

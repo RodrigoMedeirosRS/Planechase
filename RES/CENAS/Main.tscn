@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://RES/CARDS/Verso.tres" type="Texture" id=1]
 [ext_resource path="res://RES/SPRITES/Dice/dieRed_border1.png" type="Texture" id=2]
@@ -44,6 +44,12 @@ font_data = ExtResource( 22 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 24
+use_filter = true
+font_data = ExtResource( 22 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 22 )
 
@@ -220,10 +226,10 @@ texture = ExtResource( 20 )
 expand = true
 
 [node name="AtivaFenomenos" type="CheckButton" parent="MenuDeOpcoes/Menu"]
-margin_left = 387.0
-margin_top = 207.0
-margin_right = 421.0
-margin_bottom = 237.0
+margin_left = 386.0
+margin_top = 198.0
+margin_right = 420.0
+margin_bottom = 228.0
 theme = ExtResource( 19 )
 pressed = true
 align = 1
@@ -239,10 +245,10 @@ custom_fonts/font = SubResource( 3 )
 text = "Ativar Fenômenos"
 
 [node name="AtivarCustomCards" type="CheckButton" parent="MenuDeOpcoes/Menu"]
-margin_left = 387.0
-margin_top = 243.0
-margin_right = 421.0
-margin_bottom = 273.0
+margin_left = 386.0
+margin_top = 234.0
+margin_right = 420.0
+margin_bottom = 264.0
 theme = ExtResource( 19 )
 pressed = true
 align = 1
@@ -259,9 +265,9 @@ text = "Ativar Custom Cards"
 
 [node name="ChanceDeTransplanar" type="SpinBox" parent="MenuDeOpcoes/Menu"]
 margin_left = 376.0
-margin_top = 279.0
+margin_top = 307.0
 margin_right = 450.0
-margin_bottom = 312.0
+margin_bottom = 340.0
 theme = ExtResource( 19 )
 max_value = 3.0
 value = 1.0
@@ -277,9 +283,9 @@ text = "Chance de Transplanar"
 
 [node name="ChanceDeTransplanar2" type="SpinBox" parent="MenuDeOpcoes/Menu"]
 margin_left = 376.0
-margin_top = 321.0
+margin_top = 349.0
 margin_right = 450.0
-margin_bottom = 354.0
+margin_bottom = 382.0
 theme = ExtResource( 19 )
 max_value = 3.0
 value = 1.0
@@ -293,11 +299,19 @@ theme = ExtResource( 19 )
 custom_fonts/font = SubResource( 5 )
 text = "Chance de Caos"
 
+[node name="TotalDeCards" type="Label" parent="MenuDeOpcoes/Menu"]
+margin_left = 152.0
+margin_top = 270.0
+margin_right = 429.0
+margin_bottom = 298.0
+custom_fonts/font = SubResource( 7 )
+text = "Total de Cards no Deck: 170 "
+
 [node name="Salvar" type="TextureButton" parent="MenuDeOpcoes/Menu"]
 margin_left = 308.0
-margin_top = 371.0
+margin_top = 399.0
 margin_right = 435.0
-margin_bottom = 412.0
+margin_bottom = 440.0
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 23 )
 texture_hover = ExtResource( 25 )
@@ -317,9 +331,9 @@ valign = 1
 
 [node name="Cancelar" type="TextureButton" parent="MenuDeOpcoes/Menu"]
 margin_left = 154.0
-margin_top = 371.0
+margin_top = 399.0
 margin_right = 281.0
-margin_bottom = 412.0
+margin_bottom = 440.0
 texture_normal = ExtResource( 24 )
 texture_pressed = ExtResource( 23 )
 texture_hover = ExtResource( 25 )
