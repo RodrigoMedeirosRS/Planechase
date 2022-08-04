@@ -1,3 +1,4 @@
+using DTO;
 using Godot;
 using System;
 
@@ -6,10 +7,12 @@ namespace CTRL
 	public class MainCTRL : Control
 	{
 		private bool FirstCard { get; set; }
+		private bool Merging { get; set; }
 		private TextureButton Card { get; set; }
 		private TextureButton Phenomenon { get; set; }
 		private BLL.Interface.IDeck PlanarDeck { get; set; }
 		private DTO.Card ActualPlane { get; set; }
+		private DTO.Card MergingPlane { get; set; }
 		private DTO.Card ActualPhenomenon { get; set; }
 		private Control OptionMenu { get; set; }
 		private bool EnablePhenomenons { get; set; }
@@ -66,6 +69,8 @@ namespace CTRL
 		{
 			FirstCard = true;
 			ActualPlane = null;
+			MergingPlane = null;
+			Merging = false;
 			ActualPhenomenon = null;
 			EnableCustomCards = BLL.Options.EnableCustomCards;
 			EnablePhenomenons = BLL.Options.EnablePhenomenons;
@@ -122,6 +127,8 @@ namespace CTRL
 			if (card.CardType == DTO.Type.Plane)
 			{
 				ActualPlane = card;
+				MergingPlane = null;
+				Merging = false;
 				ActualPhenomenon = null;
 				Card.TextureNormal = ActualPlane.CardImage;
 				Phenomenon.Visible = false;
@@ -130,14 +137,28 @@ namespace CTRL
 			{
 				ActualPhenomenon = card;
 				Card.TextureNormal = ActualPhenomenon.CardImage;
-				while(card.CardType != DTO.Type.Plane)
+				if (ActualPhenomenon.FilePath.Contains("Phenomenon_7"))
 				{
-					PlanarDeck.SendToCemitery(card);
-					card = PlanarDeck.RevealTopCard();
+					card = SearchPlaneCard(card);
+					MergingPlane = card;
 				}
-				ActualPlane = card;
+				else
+					MergingPlane = null;
+				ActualPlane = SearchPlaneCard(card);
+				Merging = false;
 				Phenomenon.Visible = true;
 			}
+		}
+		private Card SearchPlaneCard(Card card)
+		{
+			do
+			{
+				PlanarDeck.SendToCemitery(card);
+				card = PlanarDeck.RevealTopCard();
+			} 
+			while (card.CardType != DTO.Type.Plane);
+
+			return card;
 		}
 		private void _on_Card_button_up()
 		{
@@ -146,9 +167,10 @@ namespace CTRL
 				RevealCard();
 				FirstCard = false;
 			}
-			if (Phenomenon.Visible)
+			else if (Phenomenon.Visible)
 			{
-				Card.TextureNormal = ActualPlane.CardImage;
+				Card.TextureNormal = (Merging && MergingPlane != null) ? MergingPlane.CardImage : ActualPlane.CardImage;
+				Merging = MergingPlane != null ? !Merging : Merging;
 			}
 		}
 		private void _on_Transplanar_button_up()

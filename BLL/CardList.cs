@@ -11,6 +11,7 @@ namespace BLL
             "res://RES/CARDS/Phenomenon_4",
             "res://RES/CARDS/Phenomenon_5",
             "res://RES/CARDS/Phenomenon_6",
+            "res://RES/CARDS/Phenomenon_7",
             "res://RES/CARDS/Phenomenon_8"
         };
         public static List<string> CustomPhenomenon { get; } = new List<string>()

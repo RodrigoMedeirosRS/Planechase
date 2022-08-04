@@ -18,10 +18,14 @@ Alguns Fenômenos podem ter seus efeitos persistidos até os jogadores Transplan
 ## Jogador Ativo ##
 Sempre que um efeito desencadeado por um Plano ou Fenômeno referenciar você, ele está fazendo referência ao jogador ativo, que é o jogador que está no seu turno naquele momento.
 
+## Cards Remvidos ##
+Esta ausente nesta aplicação um card de Fenômeno: Interplanar Tunnel. Atualmente não está nos planos inserir a função de busca de cards no deck planar. 
+
 ## Observações ##
 Este software NÃO é um produto oficial e NÃO tem qualquer afiliação ou vínculo com a Wizzards of The Coast.
 Este é um produto totalmente gratuito, opensource e sem qualquer fim lucrativo, tem como objetivo apenas divulgar o formato Planechase que foi descontinuado em 2012.
 
-
 ## Licença ##
 Esse projeto é distribuído sob a licença MIT: https://github.com/RodrigoMedeirosRS/Planechase/blob/main/License
+
+
