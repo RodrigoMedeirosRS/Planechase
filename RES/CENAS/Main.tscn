@@ -250,7 +250,6 @@ margin_top = 234.0
 margin_right = 420.0
 margin_bottom = 264.0
 theme = ExtResource( 19 )
-pressed = true
 align = 1
 expand_icon = true
 
