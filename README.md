@@ -18,8 +18,10 @@ Alguns Fenômenos podem ter seus efeitos persistidos até os jogadores Transplan
 ## Jogador Ativo ##
 Sempre que um efeito desencadeado por um Plano ou Fenômeno referenciar você, ele está fazendo referência ao jogador ativo, que é o jogador que está no seu turno naquele momento.
 
-## Cards Remvidos ##
-Esta ausente nesta aplicação um card de Fenômeno: Interplanar Tunnel. Atualmente não está nos planos inserir a função de busca de cards no deck planar. 
+## Diferenças em Relação ao Planechase IRL ##
+Esta ausente nesta aplicação um card de Fenômeno: Interplanar Tunnel. O card Infinity Stair teve seu efeito de caos modificado para Scry 5. Atualmente não está nos planos inserir a função de busca de cards no deck planar.
+
+O card Otaria foi rebalanceado, sempre que for obtido uma rolagem de caos, como efeito adicional ao efeito do plano, os jogadores transplanam.
 
 ## Observações ##
 Este software NÃO é um produto oficial e NÃO tem qualquer afiliação ou vínculo com a Wizzards of The Coast.
