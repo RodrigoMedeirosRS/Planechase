@@ -108,10 +108,10 @@ namespace BLL
             "res://RES/CARDS/Plane_76",
             "res://RES/CARDS/Plane_77",
             "res://RES/CARDS/Plane_78",
+            "res://RES/CARDS/Plane_79"
         };
         public static List<string> CustomPlane { get; } = new List<string>()
         {
-            "res://RES/CARDS/Plane_79",
             "res://RES/CARDS/Plane_80",
             "res://RES/CARDS/Plane_81",
             "res://RES/CARDS/Plane_82",
@@ -202,7 +202,8 @@ namespace BLL
             "res://RES/CARDS/Plane_167",
             "res://RES/CARDS/Plane_168",
             "res://RES/CARDS/Plane_169",
-            "res://RES/CARDS/Plane_170"
+            "res://RES/CARDS/Plane_170",
+            "res://RES/CARDS/Plane_171"
         };
     }
 }
